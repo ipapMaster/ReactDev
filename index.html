@@ -20,21 +20,33 @@
         }
 
         function Menu() {
-            return
-            <div className={"buttons-container"}>
-                <button>Главная</button>
-                <button>О компании</button>
-                <button>Контакты</button>
-                <button>Время работы</button>
-            </div>
+            return (
+                <div className={"buttons-container"}>
+                    <button>Главная</button>
+                    <button>О компании</button>
+                    <button>Контакты</button>
+                    <button>Время работы</button>
+                </div>
+            )
         }
 
         function Feedback() {
-            return
-            <div className={"feedback"}>
-                <span>Позвонить</span>
-                <span></span>
-            </div>
+            return (
+                <div className={"feedback"}>
+                    <span>Позвонить</span>
+                    <span></span>
+                </div>
+            )
+        }
+
+        function Form() {
+            return (
+                <div className={"form"}>
+                    <input type={"text"} placeholder={"Введите Ваш номер"} />
+                    <input type={"text"} placeholder={"Введите Ваше имя"} />
+                    <button>Отправить</button>
+                </div>
+            )
         }
 
         function MyApp() {
@@ -46,11 +58,7 @@
                         <Feedback />
                     </header>
                     <main>
-                        <div className={"form"}>
-                            <input type={"text"} placeholder={"Введите Ваш номер"} />
-                            <input type={"text"} placeholder={"Введите Ваше имя"} />
-                            <button>Отправить</button>
-                        </div>
+                        <Form />
                     </main>
                 </>
             );
