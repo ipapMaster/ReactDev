@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Моё первое приложение на React</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+    <div id="root"></div>
+    <script type="text/babel">
+        function MyApp() {
+            return (
+                <>
+                    <header>
+                        <div className={"logo"}>LOGO</div>
+                        <div className={"buttons-container"}>
+                            <button>Главная</button>
+                            <button>О компании</button>
+                            <button>Контакты</button>
+                            <button>Время работы</button>
+                        </div>
+                        <div className={"feedback"}>
+                            <span>Позвонить</span>
+                            <span></span>
+                        </div>
+                    </header>
+                    <main>
+                        <div className={"form"}>
+                            <input type={"text"} placeholder={"Введите Ваш номер"}/>
+                            <input type={"text"} placeholder={"Введите Ваше имя"}/>
+                            <button>Отправить</button>
+                        </div>
+                    </main>
+                </>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById("root")).render(<MyApp />);
+    </script>
+</body>
+
+</html>
