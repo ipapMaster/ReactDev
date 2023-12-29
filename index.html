@@ -19,21 +19,31 @@
             return <div className={"logo"}>LOGO</div>
         }
 
+        function Menu() {
+            return
+            <div className={"buttons-container"}>
+                <button>Главная</button>
+                <button>О компании</button>
+                <button>Контакты</button>
+                <button>Время работы</button>
+            </div>
+        }
+
+        function Feedback() {
+            return
+            <div className={"feedback"}>
+                <span>Позвонить</span>
+                <span></span>
+            </div>
+        }
+
         function MyApp() {
             return (
                 <>
                     <header>
                         <Logo />
-                        <div className={"buttons-container"}>
-                            <button>Главная</button>
-                            <button>О компании</button>
-                            <button>Контакты</button>
-                            <button>Время работы</button>
-                        </div>
-                        <div className={"feedback"}>
-                            <span>Позвонить</span>
-                            <span></span>
-                        </div>
+                        <Menu />
+                        <Feedback />
                     </header>
                     <main>
                         <div className={"form"}>
