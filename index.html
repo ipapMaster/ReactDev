@@ -14,11 +14,16 @@
 
     <div id="root"></div>
     <script type="text/babel">
+        // Компоненты
+        function Logo() {
+            return <div className={"logo"}>LOGO</div>
+        }
+
         function MyApp() {
             return (
                 <>
                     <header>
-                        <div className={"logo"}>LOGO</div>
+                        <Logo />
                         <div className={"buttons-container"}>
                             <button>Главная</button>
                             <button>О компании</button>
@@ -32,8 +37,8 @@
                     </header>
                     <main>
                         <div className={"form"}>
-                            <input type={"text"} placeholder={"Введите Ваш номер"}/>
-                            <input type={"text"} placeholder={"Введите Ваше имя"}/>
+                            <input type={"text"} placeholder={"Введите Ваш номер"} />
+                            <input type={"text"} placeholder={"Введите Ваше имя"} />
                             <button>Отправить</button>
                         </div>
                     </main>
