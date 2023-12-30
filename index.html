@@ -14,18 +14,28 @@
 
     <div id="root"></div>
     <script type="text/babel">
+        // Пункты меню
+        const menuData = ['Главная', 'О компании', 'Контакты', 'Время работы'];
+        // Вывод меню
+        const createMenu = () => {
+            const elements = [];
+            menuData.forEach((item, index) => {
+                elements.push(<button key={index}>{item}</button>);
+            });
+
+            return elements;
+        };
+
         // Компоненты
         function Logo() {
             return <div className={"logo"}>LOGO</div>
         }
 
         function Menu() {
+            const mainMenu = createMenu();
             return (
                 <div className={"buttons-container"}>
-                    <button>Главная</button>
-                    <button>О компании</button>
-                    <button>Контакты</button>
-                    <button>Время работы</button>
+                    {mainMenu}
                 </div>
             )
         }
