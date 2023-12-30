@@ -16,6 +16,11 @@
     <script type="text/babel">
         // Пункты меню
         const menuData = ['Главная', 'О компании', 'Контакты', 'Время работы'];
+        // Объект для формы
+        const formData = {
+            number: 'Введите Ваш номер',
+            name: 'Введите Ваше имя'
+        };
         // Вывод меню
         const createMenu = () => {
             const elements = [];
@@ -52,8 +57,8 @@
         function Form() {
             return (
                 <div className={"form"}>
-                    <input type={"text"} placeholder={"Введите Ваш номер"} />
-                    <input type={"text"} placeholder={"Введите Ваше имя"} />
+                    <input type={"text"} placeholder={formData.number} />
+                    <input type={"text"} placeholder={formData.name} />
                     <button>Отправить</button>
                 </div>
             )
