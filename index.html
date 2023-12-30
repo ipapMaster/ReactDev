@@ -44,29 +44,34 @@
         function Menu() {
             const mainMenu = createMenu();
             return (
-                <div className={"buttons-container"}>
-                    {mainMenu}
-                </div>
+                React.createElement(
+                    "div",
+                    { className: "buttons-container" },
+                    mainMenu)
             )
         }
 
         function Feedback() {
             return (
-                <div className={"feedback"}>
-                    <span>Позвонить</span>
-                    <span></span>
-                </div>
-            )
+                React.createElement(
+                    "div",
+                    { className: "feedback" },
+                    React.createElement("span", null, "Позвонить"))
+            );
         }
 
         function Form() {
-            return (
-                <div className={"form"}>
-                    <input type={"text"} placeholder={formData.number} />
-                    <input type={"text"} placeholder={formData.name} />
-                    <button>Отправить</button>
-                </div>
-            )
+            return React.createElement(
+                "div",
+                { className: "form" },
+                React.createElement(
+                    "input",
+                    {
+                        type: "text",
+                        placeholder: formData.number
+                    }),
+                React.createElement("input", { type: "text", placeholder: formData.name }),
+                React.createElement("button", null, "Отправить"));
         }
 
         function MyApp() {
