@@ -33,7 +33,12 @@
 
         // Компоненты
         function Logo() {
-            return <div className={"logo"}>LOGO</div>
+            //return <div className={"logo"}>LOGO</div>
+            return React.createElement(
+                'div',
+                { className: 'logo' },
+                'LOGO'
+            )
         }
 
         function Menu() {
