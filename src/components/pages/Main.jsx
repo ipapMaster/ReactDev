@@ -1,8 +1,11 @@
 import React from "react";
+import Header from "../views/global/Header";
 
 const Main = () => {
     return (
-        <React.Fragment></React.Fragment>
+        <React.Fragment>
+            <Header></Header>
+        </React.Fragment>
     )
 }
 

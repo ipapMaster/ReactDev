@@ -3,6 +3,7 @@
 /public/manifest.json
 /.pnp
 /.vscode
+/build
 
 .pnp.js
 
