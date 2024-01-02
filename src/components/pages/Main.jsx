@@ -10,11 +10,11 @@ const Main = () => {
     return (
         <React.Fragment>
             <Header />
-                <FormContainer>
-                    <InputComponent />
-                    <InputComponent />
-                    <InputComponent />
-                </FormContainer>
+            <FormContainer>
+                <InputComponent placeholder={"Введите сумму транзакции"} />
+                <InputComponent placeholder={"Bведите тип транзакции"} />
+                <InputComponent placeholder={"Введите комментарий"} />
+            </FormContainer>
             <Footer />
         </React.Fragment>
     )

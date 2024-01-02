@@ -27,7 +27,7 @@ const css = {
         padding-left: 15px;
         margin-bottom: 10px;
         :last-child {
-            margin-bottom: 0;
+            margin-top: 0;
         }
     `
 }
