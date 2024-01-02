@@ -19,7 +19,7 @@ const css = {
         justify-content: space-between;
         position: relative;
         width: 100%;
-        height: 80px;
+        height: 30px;
         background-color: #E5E5E5;
     `,
     HeaderCSS: {

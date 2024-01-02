@@ -1,9 +1,18 @@
 import React from "react";
+import css from "../../styles/form";
 
-const Input = () => {
+const { Input } = css
+
+const InputComponent = () => {
     return (
-        <React.Fragment></React.Fragment>
+        <React.Fragment>
+            <Input
+                type={"text"}
+                placeholder={"Введите сумму транзакции"}
+                maxLength={"100"}
+            />
+        </React.Fragment>
     )
 }
 
-export default Input
+export default InputComponent

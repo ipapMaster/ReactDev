@@ -6,7 +6,7 @@ const { FooterContainer } = css
 const Footer = () => {
     return (
         <React.Fragment>
-            <FooterContainer></FooterContainer>
+            <FooterContainer />
         </React.Fragment>
     )
 }
