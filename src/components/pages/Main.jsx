@@ -8,22 +8,40 @@ const { FormContainer, Button } = css
 
 const Main = () => {
 
-    const [value, setValue] = useState()
-    const [type, setType] = useState()
-    const [comment, setComment] = useState()
+    const [value, setValue] = useState('')
+    const [type, setType] = useState('')
+    const [comment, setComment] = useState('')
+
+    const validation = () => {
+        if (value.length > 2 && type) {
+            console.log('Валидация успешна');
+            setValue('')
+            setType('')
+            setComment('')
+        } else {
+            console.log('Ошибка валидации');
+        }
+    }
 
     return (
         <React.Fragment>
             <Header />
             <FormContainer>
-                <InputComponent action={setValue} placeholder={"Введите сумму транзакции"} />
-                <InputComponent action={setType} placeholder={"Введите тип транзакции"} />
-                <InputComponent action={setComment} placeholder={"Введите комментарий"} />
-                <Button backgroundColor={"rgb(229, 229, 229)"}>Сохранить</Button>
+                <InputComponent inputValue={value} action={setValue} placeholder={"Введите сумму транзакции"} />
+                <InputComponent inputValue={type} action={setType} placeholder={"Введите тип транзакции"} />
+                <InputComponent inputValue={comment} action={setComment} placeholder={"Введите комментарий"} />
+                <Button
+                    backgroundColor={
+                        value.length < 3 ?
+                            "rgb(229, 229, 229)" :
+                            type.length < 3 ?
+                                "rgb(229, 229, 229)" :
+                                "rgb(176, 243, 71)"
+                    }
+                    onClick={validation}
+                >Сохранить</Button>
             </FormContainer>
-            <span>{value}</span><br />
-            <span>{type}</span><br />
-            <span>{comment}</span>
+
             <Footer />
         </React.Fragment>
     )
