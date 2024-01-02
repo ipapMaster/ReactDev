@@ -26,9 +26,23 @@ const css = {
         border-radius: 5px;
         padding-left: 15px;
         margin-bottom: 10px;
-        :last-child {
-            margin-top: 0;
+        &:last-child {
+            margin-bottom: 0;
         }
+    `,
+    Button: styled.span`
+        display: block;
+        position: relative;
+        width: 220px;
+        height: 45px;
+        line-height: 42px;
+        border-radius: 5px;
+        text-align: center;
+        background-color: ${props => props.backgroundColor};
+        &:hover {
+            color: red;
+        }
+        cursor: pointer;
     `
 }
 
