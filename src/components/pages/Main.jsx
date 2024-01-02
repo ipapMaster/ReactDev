@@ -6,14 +6,37 @@ import css from "../../styles/form";
 
 const { FormContainer, Button } = css
 
+const params = [
+    {
+        maxLength: 100,
+        placeholder: "Введите сумму транзакции"
+    },
+    {
+        maxLength: 100,
+        placeholder: "Bведите тип транзакции"
+    },
+    {
+        maxLength: 100,
+        placeholder: "Введите комментарий"
+    }
+]
+
+const Fields = () => {
+    let fields = [];
+
+    params.forEach((item, index) => {
+        fields.push(<InputComponent key={index} maxLength={item.maxLength} placeholder={item.placeholder} />)
+    });
+
+    return fields;
+}
+
 const Main = () => {
     return (
         <React.Fragment>
             <Header />
             <FormContainer>
-                <InputComponent placeholder={"Введите сумму транзакции"} />
-                <InputComponent placeholder={"Bведите тип транзакции"} />
-                <InputComponent placeholder={"Введите комментарий"} />
+                <Fields />
                 <Button backgroundColor={"rgb(229, 229, 229)"}>Сохранить</Button>
             </FormContainer>
             <Footer />
