@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Header from "../views/global/Header";
 import Footer from "../views/global/Footer";
 import InputComponent from "../comps/Input";
+import DataList from "../views/local/DataList";
 import css from "../../styles/form";
 
 const { FormContainer, Button } = css
@@ -11,10 +12,15 @@ const Main = () => {
     const [value, setValue] = useState('')
     const [type, setType] = useState('')
     const [comment, setComment] = useState('')
+    const [data, setData] = useState([])
 
     const validation = () => {
         if (value.length > 2 && type) {
             console.log('Валидация успешна');
+            const dataLine = `${value}::${type}::${comment}`
+            setData(
+                prev => [...prev, dataLine]
+            )
             setValue('')
             setType('')
             setComment('')
@@ -41,7 +47,7 @@ const Main = () => {
                     onClick={validation}
                 >Сохранить</Button>
             </FormContainer>
-
+            <DataList data={data} />
             <Footer />
         </React.Fragment>
     )

@@ -10,7 +10,7 @@ const InputComponent = (props) => {
     return (
         <React.Fragment>
             <Input
-            value={inputValue}
+                value={inputValue}
                 type={"text"}
                 placeholder={placeholder}
                 maxLength={"100"}
