@@ -20,6 +20,8 @@ const css = {
         align-items: center;
         justify-content: flex-start;
         position: relative;
+        margin-bottom: 10px;
+        border-bottom: 1px solid lightgray;
         width: 100%;
     `,
     ContentCell: styled.span`
