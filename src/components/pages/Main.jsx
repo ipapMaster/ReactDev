@@ -1,24 +1,24 @@
 import React, { useState } from "react";
-import Header from "../views/global/Header";
 import Footer from "../views/global/Footer";
 import InputComponent from "../comps/Input";
-import DataList from "../views/local/DataList";
 import css from "../../styles/form";
 
 const { FormContainer, Button } = css
 
-const Main = () => {
+const Main = (props) => {
+
+    const {action} = props
 
     const [value, setValue] = useState('')
     const [type, setType] = useState('')
     const [comment, setComment] = useState('')
-    const [data, setData] = useState([])
+    
 
     const validation = () => {
         if (value.length > 2 && type) {
             console.log('Валидация успешна');
             const dataLine = `${value}::${type}::${comment}`
-            setData(
+            action(
                 prev => [...prev, dataLine]
             )
             setValue('')
@@ -31,7 +31,6 @@ const Main = () => {
 
     return (
         <React.Fragment>
-            <Header />
             <FormContainer>
                 <InputComponent inputValue={value} action={setValue} placeholder={"Введите сумму транзакции"} />
                 <InputComponent inputValue={type} action={setType} placeholder={"Введите тип транзакции"} />
@@ -47,7 +46,6 @@ const Main = () => {
                     onClick={validation}
                 >Сохранить</Button>
             </FormContainer>
-            <DataList data={data} />
             <Footer />
         </React.Fragment>
     )
