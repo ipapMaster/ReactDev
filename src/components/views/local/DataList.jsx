@@ -6,7 +6,7 @@ const { DataContainer, ContentLine, ContentCell, ButtonsLine, ButtonItem } = css
 
 const DataList = (props) => {
 
-    const { data = [] } = props
+    const { data = [], setShow } = props
     const [dataType, setDataType] = useState('расход')
     const filterData = data.filter(item => item.split('::')[1] === dataType)
     const filterDataSum = data.filter(item => item.split('::')[1] === dataType).reduce((summ, item) => {
@@ -20,8 +20,14 @@ const DataList = (props) => {
         }
     }, 0)
 
-    const reduceDataType1 = () => setDataType('доход')
-    const reduceDataType2 = () => setDataType('расход')
+    const reduceDataType1 = () => {
+        setDataType('доход')
+        setShow(false)
+    }
+    const reduceDataType2 = () => {
+        setDataType('расход')
+        setShow(true)
+    }
     const reduceDataType3 = () => setDataType('')
 
     // Не очень хорошая практика (код дублируется)
@@ -29,9 +35,9 @@ const DataList = (props) => {
     return (
         <React.Fragment>
             <ButtonsLine>
-                <ButtonItem onClick={reduceDataType1}>доходы</ButtonItem>
-                <ButtonItem onClick={reduceDataType2}>расходы</ButtonItem>
-                <ButtonItem onClick={reduceDataType3}>общее</ButtonItem>
+                <ButtonItem style={{ color: dataType === 'доход' ? 'red' : '' }} onClick={reduceDataType1}>доходы</ButtonItem>
+                <ButtonItem style={{ color: dataType === 'расход' ? 'red' : '' }} onClick={reduceDataType2}>расходы</ButtonItem>
+                <ButtonItem style={{ color: dataType === '' ? 'red' : '' }} onClick={reduceDataType3}>общее</ButtonItem>
             </ButtonsLine>
             <DataContainer>
                 {filterData.length > 0 && <React.Fragment>

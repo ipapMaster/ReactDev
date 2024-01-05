@@ -18,10 +18,8 @@ const Main = (props) => {
     const [type, setType] = useState('доход')
     const [comment, setComment] = useState('')
 
-
     const validation = () => {
         if (value.length > 2 && type) {
-            console.log('Валидация успешна');
             const dataLine = `${value}::${type}::${comment}`
             action(
                 prev => [...prev, dataLine]
@@ -44,9 +42,9 @@ const Main = (props) => {
 
     return (
         <React.Fragment>
-            <FormContainer>
+            <FormContainer style={{ alignItems: 'flex-start' }}>
                 <InputComponent inputValue={value} action={setValue} placeholder={"Введите сумму транзакции"} />
-                <FormControl>
+                <FormControl style={{ marginTop: '9px', marginBottom: '12px' }}>
                     <FormLabel id="demo-controlled-radio-buttons-group">Выберите тип транзакции</FormLabel>
                     <RadioGroup
                         aria-labelledby="demo-controlled-radio-buttons-group"
@@ -60,7 +58,7 @@ const Main = (props) => {
                     </RadioGroup>
                 </FormControl>
                 {type === 'доход' && <InputComponent inputValue={comment} action={setComment} placeholder={"Введите комментарий"} />}
-                {type === 'расход' && <FormControl>
+                {type === 'расход' && <FormControl style={{ marginTop: '0px', marginBottom: '14px' }}>
                     <FormLabel id="demo-controlled-radio-buttons-group">Выберите тип расхода</FormLabel>
                     <RadioGroup
                         aria-labelledby="demo-controlled-radio-buttons-group"
