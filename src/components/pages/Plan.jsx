@@ -1,12 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Plan = () => {
 
-    const [data, setData] = useState({name: 'John', age: 25})
-    
+    const [data, setData] = useState({ name: 'John', age: 25 })
+
     const change = () => {
-        setData({...data, age: 30})
+        setData({ ...data, age: 30 })
     }
+
+    useEffect(() => {
+        console.log('Срабатывает единожды при рендеринге компонента')
+    }, [])
+
+    useEffect(() => {
+        console.log('Срабатывает при изменении возраста')
+        return () => { } // срабатывает при размонтировании компонента
+    }, [data.age])
 
     return (
         <React.Fragment>
