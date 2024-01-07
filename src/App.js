@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Main from './components/pages/Main';
 import Header from './components/views/global/Header'
 import Footer from './components/views/global/Footer';
@@ -7,19 +8,27 @@ import Plan from './components/pages/Plan';
 
 function App() {
 
-  const [showPage, setShowPage] = useState('main')
+  const [setShowPage] = useState('main')
   const [data, setData] = useState([])
 
   return (
     <React.Fragment>
       <Header action={setShowPage} />
-      {
-        showPage === 'main'
-          ? <Main action={setData} />
-          : showPage === 'stat'
-            ? <Stat statData={data} />
-            : <Plan />
-      }
+      <Routes>
+        <Route
+          path={'/main'}
+          element={<Main action={setData} />}  //Component={<Main />}
+        />
+        <Route
+          path={'/stat'}
+          element={<Stat statData={data} />}  //Component={<Sat />}
+        />
+        <Route
+          path={'/plan'}
+          element={<Plan />}  //Component={<Plan />}
+        />
+      </Routes>
+
       <Footer />
     </React.Fragment>
   );

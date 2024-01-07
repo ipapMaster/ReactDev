@@ -11,3 +11,5 @@
 6. https://mui.com/material-ui/react-radio-button/ (Male and Femail)
 
 7. https://nivo.rocks/ (Pie Chart) (npm install --global yarn; yarn add @nivo/pie)
+
+8. https://reactrouter.com/en/main/start/tutorial (yarn add react-router-dom)
