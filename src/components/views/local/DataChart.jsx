@@ -7,7 +7,7 @@ const { DataContainer } = css
 const MyResponsivePie = ({ data /* see data tab */ }) => (
     <ResponsivePie
         data={data}
-        margin={{ top: 40, right: 25, bottom: 80, left: 180 }}
+        margin={{ top: 40, right: 25, bottom: 80, left: 150 }}
         innerRadius={0.5}
         padAngle={0.7}
         cornerRadius={3}

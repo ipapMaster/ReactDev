@@ -20,12 +20,16 @@ function App() {
           element={<Main action={setData} />}  //Component={<Main />}
         />
         <Route
-          path={'/stat'}
+          path={'/stat/:viewType'}
           element={<Stat statData={data} />}  //Component={<Sat />}
         />
         <Route
-          path={'/plan/:demoParam'}
+          path={'/plan'}
           element={<Plan />}  //Component={<Plan />}
+        />
+        <Route
+          path={'*'}
+          element={<Main action={setData} />}  // если задан не существующий path
         />
       </Routes>
 
