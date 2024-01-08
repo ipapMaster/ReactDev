@@ -24,7 +24,7 @@ const Header = () => {
                 <HeaderCSS.MenuContainer>
                     <button onClick={() => navigate('/main')} style={buttonCSS}>Главная</button>
                     <button onClick={() => navigate('/stat')} style={buttonCSS}>Статистика</button>
-                    <button onClick={() => navigate('/plan/helloWorld')} style={buttonCSS}>Планирование</button>
+                    <button onClick={() => navigate('/plan/demoPlan?userName=Tom&userAge=27')} style={buttonCSS}>Планирование</button>
                 </HeaderCSS.MenuContainer>
             </HeaderContainer>
         </React.Fragment>
