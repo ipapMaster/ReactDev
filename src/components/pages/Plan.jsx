@@ -1,27 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 const Plan = () => {
 
-    const [data, setData] = useState({ name: 'John', age: 25 })
-
-    const change = () => {
-        setData({ ...data, age: 30 })
-    }
+    const { demoParam } = useParams()
 
     useEffect(() => {
-        console.log('Срабатывает единожды при рендеринге компонента')
-    }, [])
-
-    useEffect(() => {
-        console.log('Срабатывает при изменении возраста')
-        return () => { } // срабатывает при размонтировании компонента
-    }, [data.age])
+        console.log(demoParam)
+    }, [demoParam])
 
     return (
         <React.Fragment>
-            <span style={{ display: 'block', marginTop: '100px', marginLeft: '100px' }}>{data.name}</span>
-            <span style={{ display: 'block', marginTop: '20px', marginLeft: '100px' }}>{data.age}</span>
-            <button onClick={change}>Изменить</button>
+            <span style={{ display: 'block', marginTop: '100px', marginLeft: '130px' }}>страница планирования</span>
         </React.Fragment>
     )
 }
