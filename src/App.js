@@ -25,7 +25,7 @@ function App() {
         />
         <Route
           path={'/plan'}
-          element={<Plan />}  //Component={<Plan />}
+          element={<Plan testProp={"Nick"} />}  //Component={<Plan />}
         />
         <Route
           path={'*'}
