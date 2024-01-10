@@ -11,6 +11,23 @@ export default class Plan extends React.Component {
         }
     }
 
+    shouldComponentUpdate(props, state) {
+        // return false - если обновлять компоненты не требуется
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        // выполнение запросов к серверу (state менять нельзя)
+    }
+
+    componentDidMount() {
+        // если всё отрендерилось при выполнении запросов к серверу
+        // (state менять нельзя)
+    }
+
+    componentWillUnmount() {
+        // "уборка" за компонентом (очистка памяти)
+    }
+
     // возвращает JSX элемент
     render() {
         return (
