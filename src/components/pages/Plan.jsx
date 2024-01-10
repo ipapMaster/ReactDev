@@ -11,29 +11,30 @@ export default class Plan extends React.Component {
         }
     }
 
-    shouldComponentUpdate(props, state) {
-        // return false - если обновлять компоненты не требуется
-    }
+    // shouldComponentUpdate(props, state) {
+    //     // return false - если обновлять компоненты не требуется
+    // }
 
-    componentDidUpdate(prevProps, prevState) {
-        // выполнение запросов к серверу (state менять нельзя)
-    }
+    // componentDidUpdate(prevProps, prevState) {
+    //     // вызывается сразу после срабатывания render
+    //     // выполнение запросов к серверу (state менять нельзя)
+    // }
 
-    componentDidMount() {
-        // если всё отрендерилось при выполнении запросов к серверу
-        // (state менять нельзя)
-    }
+    // componentDidMount() {
+    //     // если всё отрендерилось при выполнении запросов к серверу
+    //     // компонент смонтирован (state менять нельзя)
+    // }
 
-    componentWillUnmount() {
-        // "уборка" за компонентом (очистка памяти)
-    }
+    // componentWillUnmount() {
+    //     // "уборка" за компонентом (очистка памяти  и закрытия "висящих" процессов)
+    // }
 
     // возвращает JSX элемент
     render() {
         return (
             <>
                 <span>Welcome, {this.props.testProps}! Вам {this.state.age} лет. You're from {this.state.city}</span><br />
-                <button onClick={() => this.setState({ age: 35 })}>Изменить возраст</button>
+                <button onClick={() => this.setState((prevState, props) => ({ age: prevState.age + 5 }))}>Изменить возраст</button>
             </>
         )
     }
