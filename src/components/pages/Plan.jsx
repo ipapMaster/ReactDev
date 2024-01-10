@@ -9,25 +9,13 @@ export default class Plan extends React.Component {
             age: 30,
             city: 'London'
         }
+        // привязка контекста метода если не стрелочная
+        this.changeAge = this.changeAge.bind(this)
     }
 
-    // shouldComponentUpdate(props, state) {
-    //     // return false - если обновлять компоненты не требуется
-    // }
-
-    // componentDidUpdate(prevProps, prevState) {
-    //     // вызывается сразу после срабатывания render
-    //     // выполнение запросов к серверу (state менять нельзя)
-    // }
-
-    // componentDidMount() {
-    //     // если всё отрендерилось при выполнении запросов к серверу
-    //     // компонент смонтирован (state менять нельзя)
-    // }
-
-    // componentWillUnmount() {
-    //     // "уборка" за компонентом (очистка памяти  и закрытия "висящих" процессов)
-    // }
+    changeAge() {
+        this.setState({ age: 35 })
+    }
 
     // возвращает JSX элемент
     render() {
