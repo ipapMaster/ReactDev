@@ -1,27 +1,20 @@
 import React from "react";
+import Footer from "../views/global/Footer";
+import DataList from "../views/local/DataList";
 
 export default class Plan extends React.Component {
 
     constructor(props) {
         super(props)
-        // состояния
-        this.state = {
-            age: 30,
-            city: 'London'
-        }
-        // при стрелочной привязки нет
-    }
-
-    changeAge = () => {
-        this.setState({ age: 35 })
     }
 
     // возвращает JSX элемент
     render() {
         return (
             <>
-                <span>Welcome, {this.props.testProps}! Вам {this.state.age} лет. You're from {this.state.city}</span><br />
-                <button onClick={this.changeAge}>Изменить возраст</button>
+                <span>страница планирования</span>
+                <DataList viewType={'расход'} data={this.props.statData} />
+                <Footer />
             </>
         )
     }

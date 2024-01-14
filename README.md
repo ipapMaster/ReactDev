@@ -13,3 +13,5 @@
 7. https://nivo.rocks/ (Pie Chart) (npm install --global yarn; yarn add @nivo/pie)
 
 8. https://reactrouter.com/en/main/start/tutorial (yarn add react-router-dom)
+
+9. https://redux-toolkit.js.org/introduction/getting-started (yarn add @reduxjs/toolkit, yarn add react-redux)

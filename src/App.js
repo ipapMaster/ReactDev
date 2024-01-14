@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { UseSelector, useDispatch, useSelector } from 'react-redux';
+import { setData as setDataFromRedux } from './redux-state/reducers/data';
 import { Routes, Route } from 'react-router-dom';
 import Main from './components/pages/Main';
 import Header from './components/views/global/Header'
@@ -9,7 +11,12 @@ import Plan from './components/pages/Plan';
 function App() {
 
   const [setShowPage] = useState('main')
-  const [data, setData] = useState([])
+  const data = useSelector(state => state.dataReducer.data)
+  const dispatch = useDispatch()
+
+  const setData = (param) => dispatch(setDataFromRedux(param))
+
+  useEffect(() => console.log(data), [data])
 
   return (
     <React.Fragment>
@@ -25,7 +32,7 @@ function App() {
         />
         <Route
           path={'/plan'}
-          element={<Plan testProp={"Nick"} />}  //Component={<Plan />}
+          element={<Plan statData={data} />}  //Component={<Plan />}
         />
         <Route
           path={'*'}
